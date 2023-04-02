@@ -7,6 +7,9 @@ polyfills.objectFit();
 import helpers from './_parts/helpers';
 helpers.init();
 
+import header from './_parts/header';
+header.init();
+
 import slider from './_parts/slider';
 slider.init();
 
