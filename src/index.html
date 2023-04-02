@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="preload" type="font/woff2" as="font" crossorigin href="/assets/fonts/Montserrat.woff2">
+		<link rel="preload" type="font/woff2" as="font" crossorigin href="/assets/fonts/BreeSerif-Regular.woff2">
 		<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
 		<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
 		<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
@@ -26,34 +27,16 @@
 		<title>Kotrlja - Frizerski Studio</title>
 	</head>
 	<body>
-		<h1>Kotrlja</h1>
-		<i class="icon ico-facebook"></i>
-		<div class="swiper">
-			<!-- Additional required wrapper -->
-			<div class="swiper-wrapper">
-				<!-- Slides -->
-				<div class="swiper-slide">
-					Slide 1
-					<img src="/assets/images/banner/banner-lg.jpg" alt="test" />
-				</div>
-				<div class="swiper-slide">
-					Slide 2
-					<img src="/assets/images/banner/banner-lg.jpg" alt="test" />
-				</div>
-				<div class="swiper-slide">Slide 3
-					<img src="/assets/images/banner/banner-lg.jpg" alt="test">
-				</div>
-			</div>
-			<!-- If we need pagination -->
-			<div class="swiper-pagination"></div>
-
-			<!-- If we need navigation buttons -->
-			<div class="swiper-button-prev"></div>
-			<div class="swiper-button-next"></div>
-
-			<!-- If we need scrollbar -->
-			<div class="swiper-scrollbar"></div>
-		</div>
+		<section class="banner" id="home">
+			<span class="banner__prefix">DOBRODOŠLI U</span>
+			<h1 class="banner__title">Kotrlja - Frizerski Studio</h1>
+			<img class="banner__logo" src="assets/svg/logo-big.svg" alt="Logo">
+			<picture class="banner__bg-picture">
+				<source media="(max-width: 767px)" srcset="assets/images/banner/banner-s.jpg">
+				<source media="(min-width: 768px) and (max-width: 1024px)" srcset="assets/images/banner/banner-m.jpg">
+				<img class="banner__bg-img" src="assets/images/banner/banner-lg.jpg" alt="Banner image">
+			</picture>
+		</section>
 		<script defer src="js/script.js"></script>
 	</body>
 </html>

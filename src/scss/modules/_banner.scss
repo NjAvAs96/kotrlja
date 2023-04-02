@@ -1,0 +1,66 @@
+// ----------  banner
+// ------------------------------------------------------------------------------
+
+.banner {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.banner__title {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: inline-block;
+	visibility: hidden;
+	pointer-events: none;
+}
+
+.banner__bg-picture {
+	display: block;
+	height: 100%;
+	max-height: 100vh;
+	overflow: hidden;
+	img {
+		width: 100%;
+	}
+}
+
+.banner__prefix {
+	position: absolute;
+	top: 44%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: inline-block;
+	font-family: $font-second;
+	font-weight: 400;
+	color: $white;
+	font-size: 18px;
+	line-height: 24.44px;
+	@include media-breakpoint-between(md, lg) {
+		top: 52%;
+	}
+	@include media-breakpoint-down(sm) {
+		top: 68%;
+		line-height: 19.01px;
+		font-size: 14px;
+	}
+}
+
+.banner__logo {
+	position: absolute;
+	top: 68%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: block;
+	max-width: 56vw;
+	@include media-breakpoint-between(md, lg) {
+		max-width: 105.9vw;
+		top: 72%;
+	}
+	@include media-breakpoint-down(sm) {
+		max-width: 87.5vw;
+		top: 80%;
+	}
+}
