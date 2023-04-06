@@ -1,0 +1,118 @@
+// ----------  time
+// ------------------------------------------------------------------------------
+
+.time {
+	background-color: $brown-light;
+	padding: 88px 0 98px;
+	@include media-breakpoint-down(sm) {
+		padding: 14px 0 55px;
+		.wrap {
+			padding: 0 10px;
+		}
+	}
+}
+
+.time__container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.time__title {
+	font-family: $font-second;
+	font-size: 25px;
+	line-height: 32.59px;
+	font-weight: 400;
+	text-align: center;
+	color: $white;
+	margin-bottom: 15px;
+	@include media-breakpoint-down(sm) {
+		font-size: 20px;
+		font-weight: 400;
+		line-height: 27.16px;
+		margin-bottom: 11px;
+	}
+}
+
+.time__logo {
+	max-width: 58px;
+	margin-bottom: 32px;
+	@include media-breakpoint-down(sm) {
+		max-width: 30px;
+		margin-bottom: 35px;
+	}
+}
+
+.time__items {
+	display: flex;
+	margin-bottom: 28px;
+	@include media-breakpoint-between(md, lg) {
+		flex-direction: column;
+		width: 74.177%;
+	}
+	@include media-breakpoint-down(sm) {
+		width: 100%;
+		margin-bottom: 17px;
+	}
+}
+
+.time__group {
+	display: flex;
+	@include media-breakpoint-down(sm) {
+		flex-direction: column;
+		flex: 1 1 50%;
+		max-width: 50%;
+	}
+}
+
+.time__cell {
+	padding: 22px 38px 28px;
+	background-color: $black;
+	margin: 0 10px;
+	@include media-breakpoint-between(md, lg) {
+		flex: 1 1 33.333%;
+		max-width: 33.333%;
+		padding: 4.67% 0;
+		margin: 10px;
+	}
+	@include media-breakpoint-down(sm) {
+		flex: 1 1 100%;
+		max-width: 100%;
+		padding: 4.67% 0;
+		margin: 5px 10px;
+	}
+}
+
+.time__day {
+	display: block;
+	color: $white;
+	font-family: $font-second;
+	font-size: 24px;
+	line-height: 32.59px;
+	font-weight: 400;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.time__hours {
+	display: block;
+	text-align: center;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 400;
+	color: $white;
+}
+
+.time__info {
+	display: block;
+	max-width: 570px;
+	color: $white;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 400;
+	text-align: center;
+	@include media-breakpoint-down(sm) {
+		max-width: 79%;
+	}
+}
