@@ -2,7 +2,7 @@ import Swiper from 'swiper/bundle';
 
 const slider = {
 	init: function() {
-		const swiper = new Swiper('.swiper', {
+		const swiper = new Swiper('.js-swiper', {
 			// Optional parameters
 			loop: true,
 

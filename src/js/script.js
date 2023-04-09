@@ -10,6 +10,9 @@ helpers.init();
 import header from './_parts/header';
 header.init();
 
+import testimonials from './_parts/testimonials';
+testimonials.init();
+
 import slider from './_parts/slider';
 slider.init();
 
