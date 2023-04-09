@@ -1,0 +1,127 @@
+// ----------  footer
+// ------------------------------------------------------------------------------
+
+.footer {
+	display: flex;
+}
+
+.footer__container {
+	width: 100%;
+}
+
+.footer__top {
+	background-color: $gray;
+	width: 100%;
+	padding: 55px 0 66px;
+	@include media-breakpoint-between(md, lg) {
+		padding: 49px 0 66px;
+	}
+	@include media-breakpoint-down(sm) {
+		padding: 70px 0 31px;
+	}
+}
+
+.footer__box {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.footer__logo {
+	max-width: 470px;
+	margin-bottom: 18px;
+	@include media-breakpoint-between(md, lg) {
+		margin-bottom: 11px;
+	}
+	@include media-breakpoint-down(sm) {
+		max-width: 375px;
+		width: 100vw;
+		margin: 0 -20px 53px;
+	}
+}
+
+.footer__mail {
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 17px;
+	letter-spacing: 0;
+	text-align: center;
+	color: $brown-light;
+	margin-bottom: 8px;
+	transition: color 0.4s ease-in-out;
+	@include hover {
+		color: $brown-lighter;
+	}
+}
+
+.footer__phone {
+	font-family: $font-second;
+	font-size: 36px;
+	font-weight: 400;
+	line-height: 49px;
+	letter-spacing: 0;
+	text-align: center;
+	color: $white;
+	display: inline-block;
+	margin-bottom: 8px;
+	transition: color 0.4s ease-in-out;
+	@include hover {
+		color: $gray-light;
+	}
+}
+
+.footer__location {
+	display: block;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 17px;
+	letter-spacing: 0;
+	text-align: center;
+	color: $brown-light;
+	margin-bottom: 49px;
+}
+
+.footer__social-media {
+	display: flex;
+	justify-content: center;
+}
+
+.footer__social {
+	padding: 0 17px;
+	@include media-breakpoint-down(sm) {
+		padding: 0 10px;
+	}
+}
+
+.footer__social-link {
+	font-size: 41px;
+	line-height: 41px;
+	color: $gray-light;
+	span {
+		color: inherit;
+		transition: color 0.4s ease-in-out;
+	}
+	@include hover {
+		color: $gray-lighter;
+	}
+	@include media-breakpoint-down(sm) {
+		font-size: 30px;
+	}
+}
+
+.footer__bottom {
+	background-color: $black;
+	padding: 31px 0;
+}
+
+.footer__copy {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 17px;
+	letter-spacing: 0;
+	text-align: center;
+	color: $gray-light;
+	display: block;
+}
