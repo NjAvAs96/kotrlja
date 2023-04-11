@@ -42,7 +42,7 @@
 		top: 52%;
 	}
 	@include media-breakpoint-down(sm) {
-		top: 68%;
+		top: 57%;
 		line-height: 19.01px;
 		font-size: 14px;
 	}
@@ -61,6 +61,6 @@
 	}
 	@include media-breakpoint-down(sm) {
 		max-width: 87.5vw;
-		top: 80%;
+		top: 70%;
 	}
 }

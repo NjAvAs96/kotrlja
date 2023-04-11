@@ -1,0 +1,109 @@
+// ----------  about
+// ------------------------------------------------------------------------------
+
+.about {
+	width: 100%;
+	margin-top: -100px;
+	@include media-breakpoint-down(lg) {
+		margin-top: -60px;
+	}
+	@include media-breakpoint-down(sm) {
+		position: relative;
+		padding-bottom: 25px;
+	}
+}
+
+.about__container {
+	display: flex;
+	@include media-breakpoint-down(sm) {
+		flex-direction: column;
+	}
+}
+
+.about__img-container {
+	max-width: 37%;
+	flex: 1 1 37%;
+	position: relative;
+	margin-top: auto;
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 65.2%;
+		height: 82%;
+		background-color: $gray-dark;
+	}
+	@include media-breakpoint-down(lg) {
+		max-width: 69%;
+		flex: 1 1 69%;
+		margin-left: -100px;
+	}
+	@include media-breakpoint-down(sm) {
+		max-width: 100%;
+		flex: 1 1 100%;
+		margin: 0;
+	}
+}
+
+.about__img {
+	width: 100%;
+	position: relative;
+}
+
+.about__info {
+	max-width: 63%;
+	flex: 1 1 63%;
+	margin-top: 100px;
+	padding: 113px 30px 30px;
+	@include media-breakpoint-down(lg) {
+		margin-top: 0;
+		padding: 14% 0 30px 30px;
+	}
+	@include media-breakpoint-down(sm) {
+		max-width: 100%;
+		flex: 1 1 100%;
+		padding: 8px 0 0;
+	}
+}
+
+.about__title {
+	font-family: $font-second;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 33px;
+	letter-spacing: 0;
+	color: $black-fake;
+	margin-bottom: 19px;
+	@include media-breakpoint-down(sm) {
+		position: absolute;
+		top: calc(60px + 2%);
+		left: 20px;
+	}
+}
+
+.about__logo {
+	max-width: 58px;
+	width: 100%;
+	margin-bottom: 22px;
+	@include media-breakpoint-down(sm) {
+		position: absolute;
+		top: calc(60px + 7%);
+		left: 36px;
+	}
+}
+
+.about__text {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+	letter-spacing: 0;
+	color: $black-fake;
+	margin-bottom: 19px;
+	max-width: 700px;
+}
+
+.about__signature {
+	display: block;
+	margin: 0 auto;
+}
