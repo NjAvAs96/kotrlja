@@ -105,5 +105,7 @@
 
 .about__signature {
 	display: block;
-	margin: 0 auto;
+	@include media-breakpoint-down(sm) {
+		margin: 0 auto;
+	}
 }

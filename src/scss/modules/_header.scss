@@ -118,6 +118,9 @@
 			opacity: 1;
 		}
 	}
+	@include media-breakpoint-down(sm) {
+		background-position: center;
+	}
 }
 
 .nav__list {

@@ -25,6 +25,13 @@
 	img {
 		width: 100%;
 	}
+	@include media-breakpoint-down(sm) {
+		img {
+			width: auto;
+			height: 100vh;
+			object-fit: cover;
+		}
+	}
 }
 
 .banner__prefix {
