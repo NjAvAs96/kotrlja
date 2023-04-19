@@ -9,6 +9,7 @@ const info = {
 				crossFade: true
 			},
 			loop: true,
+			grabCursor: true,
 			slidesPerView: 1,
 			navigation: {
 			  nextEl: '.js-info-prev',

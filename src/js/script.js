@@ -10,6 +10,9 @@ helpers.init();
 import header from './_parts/header';
 header.init();
 
+import popular from './_parts/popular';
+popular.init();
+
 import info from './_parts/info';
 info.init();
 
