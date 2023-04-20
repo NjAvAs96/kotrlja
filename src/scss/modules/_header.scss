@@ -145,6 +145,7 @@
 	font-size: 18px;
 	position: relative;
 	transition: color 0.5s ease-in-out;
+	white-space: nowrap;
 	&::after {
 		content: '';
 		position: absolute;

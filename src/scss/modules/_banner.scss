@@ -46,7 +46,7 @@
 	font-size: 18px;
 	line-height: 24.44px;
 	@include media-breakpoint-between(md, lg) {
-		top: 52%;
+		top: 55%;
 	}
 	@include media-breakpoint-down(sm) {
 		top: 57%;
@@ -63,7 +63,7 @@
 	display: block;
 	max-width: 56vw;
 	@include media-breakpoint-between(md, lg) {
-		max-width: 105.9vw;
+		max-width: 83.205vw;
 		top: 72%;
 	}
 	@include media-breakpoint-down(sm) {
