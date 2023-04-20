@@ -10,6 +10,9 @@ helpers.init();
 import header from './_parts/header';
 header.init();
 
+import services from './_parts/services';
+services.init();
+
 import popular from './_parts/popular';
 popular.init();
 

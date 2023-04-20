@@ -1,0 +1,247 @@
+// ----------  services
+// ------------------------------------------------------------------------------
+
+.services {
+	width: 100%;
+	padding: 92px 0 39px;
+	@include media-breakpoint-between(md,lg) {
+		padding: 61px 0;
+		.wrap {
+			padding: 0;
+		}
+	}
+	@include media-breakpoint-down(sm) {
+		background-color: $gray-dark;
+		padding-top: 0;
+	}
+}
+
+.services__container {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+.services__title {
+	font-family: $font-second;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 33px;
+	letter-spacing: 0;
+	text-align: center;
+	color: $black;
+	margin-bottom: 21px;
+	@include media-breakpoint-down(sm) {
+		display: none;
+	}
+}
+
+.services__img {
+	max-width: 58px;
+	width: 100%;
+	margin-bottom: 9px;
+	@include media-breakpoint-down(sm) {
+		display: none;
+	}
+}
+
+.services__box {
+	position: relative;
+	width: 100%;
+	z-index: 5;
+	@include media-breakpoint-down(sm) {
+		margin-top: -25px;
+	}
+}
+
+.services__slider {
+	width: 100%;
+	padding-top: 25px !important;
+	padding-bottom: 73px !important;
+	min-height: 412px;
+	&.services__slider--mobile {
+		display: none;
+	}
+	@include media-breakpoint-down(sm) {
+		&.services__slider--regular {
+			display: none;
+		}
+		&.services__slider--mobile {
+			display: block;
+			padding-bottom: 0 !important;
+
+		}
+	}
+}
+
+.services__wrapper {
+	@include media-breakpoint-between(md, lg) {
+		margin-left: calc(-100% / 4.27);
+	}
+}
+
+.services__slide {
+	color: $white;
+	background-color: $gray-dark;
+	padding: 28px 15px;
+	position: relative;
+	height: initial !important;
+	&::before {
+		content: '';
+		width: 50px;
+		height: 50px;
+		background-color: $brown;
+		border-radius: 100%;
+		border: 1px solid $white;
+		position: absolute;
+		top: -25px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+.services__subtitle {
+	font-family: $font-second;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 33px;
+	letter-spacing: 0;
+	text-align: center;
+	color: $white;
+	position: relative;
+	margin-bottom: 25px;
+	&::after {
+		content: '';
+		width: calc(100% - 68px);
+		height: 1px;
+		background-color: $white;
+		position: absolute;
+		bottom: -11px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+.services__item {
+	color: $white;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	margin-bottom: 7px;
+	position: relative;
+	span {
+		color: inherit;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 15px;
+		letter-spacing: 0;
+		text-align: left;
+	}
+	.services__name {
+		padding-right: 10px;
+	}
+	.services__price {
+		text-align: right;
+		min-width: 70px;
+	}
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 1px;
+		background-color: $white;
+		bottom: -2px;
+	}
+}
+
+.services__btn {
+	width: 45px;
+	height: 45px;
+	background-color: rgba($brown, 1);
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: backgraund-color 0.3s ease-in-out;
+	z-index: 5;
+	.icon {
+		display: inline-block;
+		transition: transform 0.3s ease-in-out;
+		font-size: 8px;
+		line-height: 8px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		&::before {
+			transform-origin: center;
+			transition: transform 0.3s ease-in-out;
+		}
+	}
+	@include hover {
+		background-color: rgba($brown, 0.8);
+		.icon {
+			&::before {
+				display: inline-block;
+				transform: scale(1.2);
+			}
+		}
+	}
+	@include media-breakpoint-down(lg) {
+		display: none;
+	}
+}
+
+.services__btn--prev {
+	left: -17px;
+	@media only screen and (min-width: 1600px) {
+		left: -80px;
+	}
+}
+
+.services__btn--next {
+	right: -17px;
+	.icon {
+		&::before {
+			display: block;
+			transform: rotate(180deg);
+		}
+	}
+	@include hover {
+		.icon {
+			&::before {
+				display: block;
+				transform: scale(1.2) rotate(180deg);
+			}
+		}
+	}
+	@media only screen and (min-width: 1600px) {
+		right: -80px;
+	}
+}
+
+.services__pagination {
+	z-index: 5;
+	&.swiper-pagination-bullets {
+		position: relative;
+		left: 50%;
+		.swiper-pagination-bullet {
+			background-color: $black-fake;
+			width: 10px;
+			height: 10px;
+			&.swiper-pagination-bullet-active-main {
+				background-color: $brown;
+			}
+		}
+	}
+	@include media-breakpoint-down(sm) {
+		.swiper-pagination-bullet {
+			background-color: $white !important;
+			&.swiper-pagination-bullet-active-main {
+				background-color: $brown !important;
+			}
+		}
+	}
+}
