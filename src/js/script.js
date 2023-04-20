@@ -25,5 +25,3 @@ testimonials.init();
 import slider from './_parts/slider';
 slider.init();
 
-console.log('Kotrlja');
-

@@ -1,55 +1,61 @@
 const helpers = {
-	html: document.querySelector('html'),
-	body: document.querySelector('body'),
+	html: document.querySelector("html"),
+	body: document.querySelector("body"),
 
 	topScroll: 0,
 	isScrollDisabled: false,
-	disabledScrollClass: 'scroll-disabled',
+	disabledScrollClass: "scroll-disabled",
 
-	init: function() {
+	init: function () {
 		// Check if touch device for hover functionality
-		if ('ontouchstart' in window || navigator.msMaxTouchPoints > 0 || navigator.maxTouchPoints) {
-			this.html.classList.add('touch');
+		if (
+			"ontouchstart" in window ||
+			navigator.msMaxTouchPoints > 0 ||
+			navigator.maxTouchPoints
+		) {
+			this.html.classList.add("touch");
 		} else {
-			this.html.classList.add('no-touch');
+			this.html.classList.add("no-touch");
 		}
 
 		// Add loaded class to html, to enable transitions
-		window.addEventListener('load', () => {
+		window.addEventListener("load", () => {
 			setTimeout(() => {
-				this.html.classList.add('loaded');
+				this.html.classList.add("loaded");
 			}, 10);
 		});
 		this.detectFocusOnKeyPress();
 		// this.skipToContent();
 	},
 	//Detect key press and add class to body
-	detectFocusOnKeyPress: function() {
-		const activeFocus = 'active-focus';
-		document.addEventListener('keydown', (e) => {
-			if (e.key === 'Tab') {
+	detectFocusOnKeyPress: function () {
+		const activeFocus = "active-focus";
+		document.addEventListener("keydown", (e) => {
+			if (e.key === "Tab") {
 				this.body.classList.add(activeFocus);
 			}
 		});
-		document.addEventListener('mousedown', () => {
+		document.addEventListener("mousedown", () => {
 			if (this.body.classList.contains(activeFocus)) {
 				this.body.classList.remove(activeFocus);
 			}
 		});
 	},
 	//skip heder and focus on first next link or button
-	skipToContent: function() {
-		const skipLink = document.querySelector('.skip-link');
-		const focusableElements = document.querySelector('main').querySelector('a, button');
-		skipLink.addEventListener('keyup', (e) => {
-			if (e.code === 'Enter' || e.code === 'NumpadEnter') {
+	skipToContent: function () {
+		const skipLink = document.querySelector(".skip-link");
+		const focusableElements = document
+			.querySelector("main")
+			.querySelector("a, button");
+		skipLink.addEventListener("keyup", (e) => {
+			if (e.code === "Enter" || e.code === "NumpadEnter") {
 				if (!focusableElements) return;
 				focusableElements.focus({ preventScroll: false });
 			}
 		});
 	},
 	// Disable window scroll when popups, navigation and similar are opened
-	disableScroll: function() {
+	disableScroll: function () {
 		if (!this.isScrollDisabled) {
 			this.topScroll = document.documentElement.scrollTop;
 			this.body.style.top = `-${this.topScroll}px`;
@@ -59,8 +65,8 @@ const helpers = {
 	},
 
 	// Enable back window scroll when closing the opened overlays
-	enableScroll: function() {
-		this.body.removeAttribute('style');
+	enableScroll: function () {
+		this.body.removeAttribute("style");
 		this.body.classList.remove(this.disabledScrollClass);
 		document.documentElement.scrollTop = this.topScroll;
 		this.isScrollDisabled = false;
@@ -84,11 +90,11 @@ const helpers = {
 	 *      # Recommended events to be throttled or debounced are window scroll, resize, mousemove
 	 */
 
-	setEqualHeights: function(arrayItems, count) {
+	setEqualHeights: function (arrayItems, count) {
 		const convertedElements = [...arrayItems];
 
 		if (convertedElements !== undefined && convertedElements.length > 0) {
-			convertedElements.forEach((element) => element.removeAttribute('style'));
+			convertedElements.forEach((element) => element.removeAttribute("style"));
 			if (window.innerWidth > 767) {
 				let maxH = 0;
 
@@ -120,18 +126,20 @@ const helpers = {
 						}
 					});
 
-					convertedElements.forEach((element) => element.style.height = `${maxH}px`);
+					convertedElements.forEach(
+						(element) => (element.style.height = `${maxH}px`)
+					);
 				}
 			}
 		}
 	},
 
-	throttle: function(func, interval) {
+	throttle: function (func, interval) {
 		let timeout;
-		return function() {
+		return function () {
 			const _this = this;
 			const args = arguments;
-			const later = function() {
+			const later = function () {
 				timeout = false;
 			};
 			if (!timeout) {
@@ -142,18 +150,43 @@ const helpers = {
 		};
 	},
 
-	debounce: function(func, interval) {
+	debounce: function (func, interval) {
 		let timeout;
-		return function() {
+		return function () {
 			const _this = this;
 			const args = arguments;
-			const later = function() {
+			const later = function () {
 				timeout = null;
 				func.apply(_this, args);
 			};
 			clearTimeout(timeout);
 			timeout = setTimeout(later, interval || 100);
 		};
+	},
+
+	smoothScroll: function (target) {
+		var target = document.querySelector(target);
+		var targetPosition = target.getBoundingClientRect().top;
+		var startPosition =  window.pageXOffset;
+		var distance = targetPosition - startPosition;
+		console.log(targetPosition, startPosition, distance);
+		var startTime = null;
+
+		function loop(currentTime) {
+			if (startTime === null) startTime = currentTime;
+			var timeElapsed = currentTime - startTime;
+			var run = ease(timeElapsed, startPosition, distance, 1000);
+			console.log(run);
+			window.scrollTo(0, run);
+			if (timeElapsed < 1000) requestAnimationFrame(loop);
+		}
+		function ease(t, b, c, d) {
+			t /= d / 2;
+			if (t < 1) return (c / 2) * t * t + b;
+			t--;
+			return (-c / 2) * (t * (t - 2) - 1) + b;
+		}
+		requestAnimationFrame(loop);
 	},
 };
 

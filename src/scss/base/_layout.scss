@@ -1,5 +1,8 @@
 // ----------  layout
 // ------------------------------------------------------------------------------
+html {
+	scroll-behavior: smooth;
+}
 
 body {
 	font-family: $font-default;
@@ -8,6 +11,9 @@ body {
 	color: $black-fake;
 	* {
 		color: $black-fake;
+	}
+	&.scroll-y {
+		overflow-y: visible;
 	}
 }
 
