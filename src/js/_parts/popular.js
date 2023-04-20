@@ -10,6 +10,7 @@ const popular = {
 			pagination: {
 				el: ".js-slider-pagination",
 				dynamicBullets: true,
+				clickable: true,
 			},
 			navigation: {
 				nextEl: ".js-popular-next",

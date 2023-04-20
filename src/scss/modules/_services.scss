@@ -70,7 +70,6 @@
 		&.services__slider--mobile {
 			display: block;
 			padding-bottom: 0 !important;
-
 		}
 	}
 }
@@ -224,6 +223,9 @@
 
 .services__pagination {
 	z-index: 5;
+	&.services__pagination--second {
+		display: none;
+	}
 	&.swiper-pagination-bullets {
 		position: relative;
 		left: 50%;
@@ -237,6 +239,15 @@
 		}
 	}
 	@include media-breakpoint-down(sm) {
+		&.services__pagination--first {
+			display: none;
+		}
+		&.services__pagination--second {
+			display: block;
+		}
+		&.swiper-pagination-bullets {
+			transform: translateX(-25%) !important;
+		}
 		.swiper-pagination-bullet {
 			background-color: $white !important;
 			&.swiper-pagination-bullet-active-main {
