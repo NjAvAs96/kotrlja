@@ -12,6 +12,9 @@
 	}
 	@include media-breakpoint-down(sm) {
 		padding-top: 28px;
+		.wrap {
+			padding-right: 0;
+		}
 	}
 }
 
@@ -105,8 +108,9 @@
 	}
 	@include media-breakpoint-down(sm) {
 		&::before {
-			right: 0;
-			width: 94.37%;
+			right: 20px;
+			left: 20px;
+			width: auto;
 		}
 		img {
 			transform: translateX(-10px);
@@ -118,15 +122,16 @@
 			display: block;
 			position: absolute;
 			top: 27%;
-			right: 40px;
+			right: 56px;
 			color: $brown;
 			z-index: 10;
+			font-size: 12px;
 		}
 		.info__socials {
 			display: flex;
 			position: absolute;
 			top: 32%;
-			right: 24px;
+			right: 48px;
 			z-index: 10;
 		}
 	}
@@ -137,7 +142,7 @@
 	max-width: 58%;
 	width: 100%;
 	padding-left: 5px;
-	padding-top: 21.5%;
+	padding-top: 19.3%;
 	@include media-breakpoint-down(md) {
 		padding-top: 25.5%;
 	}
@@ -194,7 +199,7 @@
 		position: static;
 		font-size: 14px;
 		line-height: 17px;
-		margin-bottom: 3px;
+		margin-bottom: 13px;
 	}
 }
 
@@ -300,7 +305,81 @@
 	letter-spacing: 0;
 	color: $gray-light;
 	margin-bottom: 13px;
+	p {
+		font-size: inherit;
+		font-weight: inherit;
+		line-height: inherit;
+		letter-spacing: inherit;
+	}
 	@include media-breakpoint-down(sm) {
+		position: fixed;
+		z-index: 50;
+		left: 30px;
+		right: 30px;
+		bottom: 0;
+		padding: 40px 20px;
+		background-color: $brown;
+		border-radius: 8px;
+		max-height: 70%;
+		height: 100%;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.4s ease-in-out;
+		max-width: 100%;
+		p {
+			position: absolute;
+			top: 40px;
+			left: 25px;
+			right: 25px;
+			bottom: 30px;
+			overflow-y: auto;
+			max-height: calc(100% - 70px);
+			font-size: 16px;
+			line-height: 27px;
+			color: $white;
+		}
+		&.active {
+			opacity: 1;
+			pointer-events: all;
+		}
+	}
+}
+
+.info__bio-open {
+	@include media-breakpoint-up(md) {
+		display: none;
+	}
+	@include media-breakpoint-down(sm) {
+		font-size: 29px;
+		z-index: 49;
+		position: relative;
+		.icon {
+			color: $brown;
+		}
+	}
+}
+
+.info__btn-close {
+	position: absolute;
+	top: -19px;
+	right: -19px;
+	width: 39px;
+	height: 39px;
+	padding: 11px;
+	background-color: $white;
+	border-radius: 100%;
+	font-size: 18px;
+	line-height: 18px;
+	display: flex;
+	border: 2px solid $brown;
+	.icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: flex;
+	}
+	@include media-breakpoint-up(md) {
 		display: none;
 	}
 }
@@ -308,12 +387,12 @@
 .info__controls {
 	position: absolute;
 	bottom: 60px;
-	z-index: 15;
 	left: 20.2%;
 	display: flex;
 	width: 108px;
 	align-items: center;
 	justify-content: space-between;
+	z-index: 49;
 	@include media-breakpoint-down(md) {
 		left: 26.2%;
 	}
@@ -331,6 +410,7 @@
 	background-color: rgba($white, 0.8);
 	position: relative;
 	transition: background-color 0.3s ease-in-out;
+	z-index: 49;
 	.icon {
 		display: flex;
 		align-items: center;

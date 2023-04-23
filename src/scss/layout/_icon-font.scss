@@ -1,13 +1,16 @@
 $__iconfont__data: map-merge(if(global_variable_exists('__iconfont__data'), $__iconfont__data, ()), (
 	"icon-font": (
-		"ico-facebook": "\ea01",
-		"ico-google": "\ea02",
-		"ico-instagram": "\ea03",
-		"ico-menu": "\ea04",
-		"ico-pinterest": "\ea05",
-		"ico-slider-arrow": "\ea06",
-		"ico-twitter": "\ea07",
-		"ico-youtube": "\ea08"
+		"ico-bio": "\ea01",
+		"ico-close": "\ea02",
+		"ico-facebook": "\ea03",
+		"ico-google": "\ea04",
+		"ico-instagram": "\ea05",
+		"ico-mail": "\ea06",
+		"ico-menu": "\ea07",
+		"ico-pinterest": "\ea08",
+		"ico-slider-arrow": "\ea09",
+		"ico-twitter": "\ea0a",
+		"ico-youtube": "\ea0b"
 	)
 ));
 
