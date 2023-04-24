@@ -1,6 +1,9 @@
 import Swiper from 'swiper/bundle';
 
 const info = {
+	open: document.querySelectorAll('.js-bio-open'),
+	close: document.querySelectorAll('.js-info-close'),
+	controls: document.querySelector('.js-info-controls'),
 	init: function() {
 		this.infoSlider();
 		this.bio();
@@ -22,22 +25,19 @@ const info = {
 		});
 	},
 	bio: function() {
-		let open = document.querySelectorAll('.js-bio-open');
-		let close = document.querySelectorAll('.js-info-close');
-		let controls = document.querySelector('.js-info-controls');
-		open.forEach(btn => {
+		let _this = this;
+		this.open.forEach(btn => {
 			btn.addEventListener('click', function() {
 				btn.nextElementSibling.classList.toggle('active');
-				controls.style.zIndex = 0;
-			})
+				_this.controls.style.zIndex = 0;
+			});
 		});
-		close.forEach(element => {
+		this.close.forEach(element => {
 			element.addEventListener('click', () => {
 				element.parentElement.classList.remove('active');
-				controls.removeAttribute('style');
-
-			})
-		})
+				_this.controls.removeAttribute('style');
+			});
+		});
 	}
 }
 

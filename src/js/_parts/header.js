@@ -1,4 +1,3 @@
-import helpers from "./helpers";
 const header = {
 	header: document.querySelector('.js-header'),
 	nav: document.querySelector('.js-nav-container'),

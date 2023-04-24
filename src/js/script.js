@@ -7,6 +7,9 @@ polyfills.objectFit();
 import helpers from './_parts/helpers';
 helpers.init();
 
+import navLink from './_parts/navLink';
+navLink.init();
+
 import header from './_parts/header';
 header.init();
 
