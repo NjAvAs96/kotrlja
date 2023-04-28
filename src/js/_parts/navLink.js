@@ -1,5 +1,5 @@
 const navLink = {
-	sections: document.querySelectorAll('section'),
+	sections: document.querySelectorAll('.part'),
 	navList: document.querySelectorAll('.js-nav-href'),
 	init: function() {
 		this.obs();
