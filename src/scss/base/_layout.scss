@@ -15,6 +15,11 @@ body {
 	&.scroll-y {
 		overflow-y: visible;
 	}
+	&.loaded {
+		.loader {
+			pointer-events: none;
+		}
+	}
 }
 
 .scroll-disabled {

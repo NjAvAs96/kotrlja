@@ -188,6 +188,17 @@ const helpers = {
 		}
 		requestAnimationFrame(loop);
 	},
+	addClassNameListener: function (element, callback) {
+		var elem = document.querySelector(element);
+		var lastClassName = elem.className;
+		window.setInterval( function() {
+		   var className = elem.className;
+			if (className !== lastClassName) {
+				callback();
+				lastClassName = className;
+			}
+		},10);
+	}
 };
 
 export default helpers;

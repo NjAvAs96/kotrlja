@@ -5,6 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="css/style.css" />
+		<link rel="preload" as="image" href="assets/svg/logo-big.svg">
 		<link
 			rel="preload"
 			type="font/woff2"
@@ -96,11 +97,26 @@
 		/>
 		<meta name="theme-color" content="#ffffff" />
 		<title>Kotrlja - Frizerski Studio</title>
+		<script>
+			var t = Date.now();
+			window.addEventListener("load", function() {
+				var b = Date.now()
+				var c = (b - t);
+				if( c < 1000) {
+					setTimeout(function() {
+						document.querySelector('body').classList.add('loaded');
+					}, (1000 - c) );
+				} else {
+					document.querySelector('body').classList.add('loaded');
+				}
+			});
+		</script>
+		<script rel="preload" src="js/script.js" defer></script>
 	</head>
 	<body>
 		<header class="header js-header">
 			<div class="wrap">
-				<div class="header__container">
+				<div class="header__container js-header-container">
 					<div class="header__logo">
 						<svg class="header__logo-img" viewBox="0 0 173.39 84.36">
 							<path
@@ -113,7 +129,7 @@
 							aria-label="Homepage link"
 						></a>
 					</div>
-					<nav class="header__nav nav">
+					<nav class="header__nav nav js-nav">
 						<button
 							class="nav__btn-open js-nav-btn-open"
 							aria-label="Open Navigation Menu"
@@ -165,7 +181,8 @@
 		<section class="banner" id="banner">
 			<span class="banner__prefix">DOBRODOŠLI U</span>
 			<h1 class="banner__title">Kotrlja - Frizerski Studio</h1>
-			<img class="banner__logo" src="assets/svg/logo-big.svg" alt="Logo" />
+			<div class="loader active"></div>
+			<img  class="banner__logo js-banner-logo" fetchpriority="high" src="assets/svg/logo-big.svg"  alt="Logo" />
 			<picture class="banner__bg-picture">
 				<source
 					media="(max-width: 767px)"
@@ -1014,6 +1031,10 @@
 				</div>
 			</div>
 		</footer>
-		<script defer src="js/script.js"></script>
+		<script>
+			document.querySelector('.js-banner-logo').addEventListener("load", function(event) {
+				event.target.classList.add('active')
+			});
+		</script>
 	</body>
 </html>

@@ -22,8 +22,17 @@
 	height: 100%;
 	max-height: 100vh;
 	overflow: hidden;
+	min-height: 100vh;
+	position: relative;
 	img {
 		width: 100%;
+		min-width: 100%;
+		min-height: 100%;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translate(-50%, 0);
+		object-fit: cover;
 	}
 	@include media-breakpoint-down(sm) {
 		img {
@@ -45,8 +54,9 @@
 	color: $white;
 	font-size: 18px;
 	line-height: 24.44px;
+	z-index: 5;
 	@include media-breakpoint-between(md, lg) {
-		top: 55%;
+		top: 52%;
 	}
 	@include media-breakpoint-down(sm) {
 		top: 57%;
@@ -59,9 +69,19 @@
 	position: absolute;
 	top: 68%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -30%);
 	display: block;
 	max-width: 56vw;
+	z-index: 1002;
+	opacity: 0;
+	transition: opacity 0.8s ease-in-out, transform 0.9s ease-in-out;
+	&.loaded {
+		z-index: 5;
+	}
+	&.active {
+		opacity: 1;
+		transform: translate(-50%, -50%);
+	}
 	@include media-breakpoint-between(md, lg) {
 		max-width: 83.205vw;
 		top: 72%;
