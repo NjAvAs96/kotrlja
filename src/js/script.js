@@ -33,4 +33,7 @@ testimonials.init();
 import slider from './_parts/slider';
 slider.init();
 
-
+import pixi from './_parts/bannerPixi';
+if(!('ontouchstart' in window) && window.innerWidth >= 1200) {
+	pixi.init();
+}
