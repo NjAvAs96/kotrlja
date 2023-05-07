@@ -34,7 +34,7 @@
 	background: linear-gradient(90deg, $brown-light 0%, rgba(235, 236, 240, 0) 98.82%);
 	position: relative;
 	@include media-breakpoint-up(xl) {
-		width: fit-content;
+		width: 100%;
 	}
 	@include media-breakpoint-down(lg) {
 		justify-content: space-between;
@@ -78,6 +78,9 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	&.none {
+		pointer-events: none;
+	}
 	@include media-breakpoint-up(xl) {
 		opacity: 0;
 	}

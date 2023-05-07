@@ -33,6 +33,9 @@ testimonials.init();
 import slider from './_parts/slider';
 slider.init();
 
+import observerAnim from './_parts/observer';
+observerAnim.init();
+
 import pixi from './_parts/bannerPixi';
 if(!('ontouchstart' in window) && window.innerWidth >= 1200) {
 	pixi.init();
