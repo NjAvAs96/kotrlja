@@ -82,7 +82,8 @@
 		"src/scss/plugins/*.scss",
 		"src/scss/base/_grid-framework.scss",
 		"src/scss/base/_grid-layout.scss",
-		"src/scss/helpers/_mixins.scss"
+		"src/scss/helpers/_mixins.scss",
+		"src/scss/modules/_loader.scss"
 	]
 }
 

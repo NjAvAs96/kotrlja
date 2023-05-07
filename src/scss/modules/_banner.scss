@@ -88,7 +88,11 @@
 	max-width: 56vw;
 	z-index: 1002;
 	opacity: 0;
-	transition: opacity 0.8s ease-in-out, transform 0.9s ease-in-out;
+	animation-name: logo;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	animation-delay: 0.3s;
 	&.loaded {
 		z-index: 5;
 	}
@@ -103,5 +107,16 @@
 	@include media-breakpoint-down(sm) {
 		max-width: 87.5vw;
 		top: 70%;
+	}
+}
+
+@keyframes logo {
+	from {
+		transform: translate(-50%, -40%);
+		opacity: 0;
+	}
+	to {
+		transform: translate(-50%, -50%);
+		opacity: 1;
 	}
 }
