@@ -26,6 +26,7 @@
 	text-align: center;
 	color: $black-fake;
 	margin-bottom: 25px;
+	opacity: 0;
 	@include media-breakpoint-between(md, lg) {
 		margin-bottom: 40px;
 	}
@@ -40,6 +41,7 @@
 	max-width: 58px;
 	width: 100%;
 	margin-bottom: 22px;
+	opacity: 0;
 	@include media-breakpoint-between(md, lg) {
 		margin-bottom: 55px;
 	}
@@ -52,7 +54,8 @@
 .testimonials__slider {
 	text-align: center;
 	width: 100%;
-	cursor: pointer;
+	cursor: grab;
+	opacity: 0;
 }
 
 .testimonials__text {

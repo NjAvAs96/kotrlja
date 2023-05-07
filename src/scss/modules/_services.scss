@@ -4,6 +4,7 @@
 .services {
 	width: 100%;
 	padding: 92px 0 39px;
+	opacity: 0;
 	@include media-breakpoint-between(md,lg) {
 		padding: 61px 0;
 		.wrap {

@@ -163,31 +163,6 @@ const helpers = {
 			timeout = setTimeout(later, interval || 100);
 		};
 	},
-
-	smoothScroll: function (target) {
-		var target = document.querySelector(target);
-		var targetPosition = target.getBoundingClientRect().top;
-		var startPosition =  window.pageXOffset;
-		var distance = targetPosition - startPosition;
-		console.log(targetPosition, startPosition, distance);
-		var startTime = null;
-
-		function loop(currentTime) {
-			if (startTime === null) startTime = currentTime;
-			var timeElapsed = currentTime - startTime;
-			var run = ease(timeElapsed, startPosition, distance, 1000);
-			console.log(run);
-			window.scrollTo(0, run);
-			if (timeElapsed < 1000) requestAnimationFrame(loop);
-		}
-		function ease(t, b, c, d) {
-			t /= d / 2;
-			if (t < 1) return (c / 2) * t * t + b;
-			t--;
-			return (-c / 2) * (t * (t - 2) - 1) + b;
-		}
-		requestAnimationFrame(loop);
-	},
 	addClassNameListener: function (element, callback) {
 		var elem = document.querySelector(element);
 		var lastClassName = elem.className;

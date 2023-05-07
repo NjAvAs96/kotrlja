@@ -15,6 +15,7 @@
 
 .about__container {
 	display: flex;
+	overflow: hidden;
 	@include media-breakpoint-down(sm) {
 		flex-direction: column;
 	}
@@ -25,6 +26,7 @@
 	flex: 1 1 37%;
 	position: relative;
 	margin-top: auto;
+	opacity: 0;
 	&::before {
 		content: '';
 		position: absolute;
@@ -38,6 +40,9 @@
 		max-width: 69%;
 		flex: 1 1 69%;
 		margin-left: -100px;
+	}
+	@include media-breakpoint-up(md) {
+		transform: translateY(10%);
 	}
 	@include media-breakpoint-down(sm) {
 		max-width: 100%;
@@ -56,9 +61,13 @@
 	flex: 1 1 63%;
 	margin-top: 100px;
 	padding: 113px 30px 30px;
+	opacity: 0;
 	@include media-breakpoint-down(lg) {
 		margin-top: 0;
 		padding: 14% 0 30px 30px;
+	}
+	@include media-breakpoint-up(md) {
+		transform: translateX(20%);
 	}
 	@include media-breakpoint-down(sm) {
 		max-width: 100%;
