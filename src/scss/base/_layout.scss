@@ -45,15 +45,16 @@ body {
 }
 
 .arrow-up {
-	width: 45px;
-	height: 45px;
-	background-color: $brown;
+	width: 60px;
+	height: 42px;
+	background: linear-gradient(90deg, #c09d88 0, rgba(235, 236, 240, 0) 98.82%);
+	box-shadow: 8px 7px 21px 0 #00000026;
 	position: fixed;
 	bottom: 50px;
 	right: 50px;
 	z-index: 50;
-	border: 1px solid $white;
-	border-radius: 2px;
+	border: 2px solid $white;
+	border-radius: 50px;
 	opacity: 0;
 	pointer-events: none;
 	transition: opacity 0.3s ease-in-out;
@@ -67,9 +68,9 @@ body {
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%) rotate(90deg);
-		font-size: 8px;
-		line-height: 8px;
+		font-size: 12px;
+		line-height: 12px;
 		color: $white;
-		height: 8px;
+		height: 12px;
 	}
 }
