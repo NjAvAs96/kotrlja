@@ -83,7 +83,6 @@ const observerAnim = {
 						t2.to('.time__title', {opacity: 1, duration: 1});
 						t2.to('.time__logo', {opacity: 1, duration: 1}, '-=1');
 						t2.to('.time__cell', {scale: 1, duration: 1, stagger: 0.15}, '-=0.5');
-						t2.to('.time__info', {y: 0, opacity: 1, duration: 0.5});
 						e.target.classList.add('in-view');
 					}
 					if(e.target.id === 'services' && !e.target.classList.contains('in-view')) {
@@ -103,12 +102,12 @@ const observerAnim = {
 						t5.to('.info__box', {opacity: 1, duration: 1}, '-=0.5');
 						e.target.classList.add('in-view');
 					}
-					if(e.target.id === 'testimonials' && !e.target.classList.contains('in-view')) {
-						t6.to('.testimonials__title', {opacity: 1, duration: 1});
-						t6.to('.testimonials__logo', {opacity: 1, y: 0, duration: 1}, '-=0.5');
-						t6.to('.testimonials__slider', {opacity: 1, duration: 1}, '-=0.5');
-						e.target.classList.add('in-view');
-					}
+					// if(e.target.id === 'testimonials' && !e.target.classList.contains('in-view')) {
+					// 	t6.to('.testimonials__title', {opacity: 1, duration: 1});
+					// 	t6.to('.testimonials__logo', {opacity: 1, y: 0, duration: 1}, '-=0.5');
+					// 	t6.to('.testimonials__slider', {opacity: 1, duration: 1}, '-=0.5');
+					// 	e.target.classList.add('in-view');
+					// }
 					if(e.target.id === 'footer' && !e.target.classList.contains('in-view')) {
 						t7.to('.footer__logo', {opacity: 1, duration: 0.7});
 						t7.to('.footer__mail', {opacity: 1, y: 0, duration: 0.7}, '-=0.5');

@@ -5,10 +5,11 @@
 	width: 100%;
 	background-color: $brown-light;
 	padding: 73px 0;
-	display: flex;
+	// display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	display: none;
 	@include media-breakpoint-between(md, lg) {
 		padding: 61px 0 73px;
 	}
